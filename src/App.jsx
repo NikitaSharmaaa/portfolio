@@ -13,7 +13,7 @@ import NavigationHub from './NavigationHub'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-black to-[#4B0000] text-beige">
+    <div className="overflow-x-hidden min-h-screen bg-gradient-to-r from-black to-[#4B0000] text-beige">
       <Navbar/>
       <Hero/>
       <Certifications/>

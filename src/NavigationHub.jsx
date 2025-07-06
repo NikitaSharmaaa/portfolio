@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import profilePic from './assets/profile-pic.png'
+import profilePic from './assets/profile.jpg'
 const navItems = [
   { id: 'about', label: 'About', direction: 'left' },
   { id: 'projects', label: 'Projects', direction: 'bottom' },
