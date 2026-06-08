@@ -1,26 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
 import './App.css'
-import Navbar from './Navbar'
-import Hero from './Hero'
-import Certifications from './Certifications'
-import ExperienceProjects from './ExperienceProjects'
-import Skills from './Skills'
-import BeyondCode from './BeyondCode'
-import Contact from './Contact'
-import NavigationHub from './NavigationHub'
+import FloatingNav from './components/FloatingNav'
+import Hero from './components/Hero'
+import About from './components/About'
+import Skills from './components/Skills'
+import Experience from './components/Experience'
+import Projects from './components/Projects'
+import Certifications from './components/Certifications'
+import Achievements from './components/Achievements'
+import Contact from './components/Contact'
+import FloatingDecorations from './components/FloatingDecorations'
+import Footer from './components/Footer'
 
 function App() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <div className="overflow-x-hidden min-h-screen bg-gradient-to-r from-black to-[#4B0000] text-beige">
-      <Navbar/>
-      <Hero/>
-      <Certifications/>
-      <ExperienceProjects/>
-      <Skills/>
-      <BeyondCode/>
-      <Contact/>
+    <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-[#ab2270] via-soft-yellow to-warm-yellow">
+      <FloatingDecorations />
+      <FloatingNav scrolled={scrolled} />
+      <Hero />
+      <About />
+      <Skills />
+      <Experience />
+      <Projects />
+      <Certifications />
+      <Achievements />
+      <Contact />
+      <Footer />
     </div>
   )
 }
